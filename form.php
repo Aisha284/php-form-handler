@@ -67,14 +67,23 @@
     </div>
     <div class="col-sm-8">
       <h2>PHP Form Handler</h2>
-      <form action="">
-        <div class="mb-3 mt-3">
-          <label for="email">First Name:</label>
-          <input type="text" class="form-control" id="FirstName" placeholder="Enter Your First Name" name="FirstName">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-      
+
+            <?php
+        if(isset($_POST["FirstName"])){//show data
+            echo $_POST["FirstName"];
+        }else{//show form
+            echo '
+            <form method="post" action="">
+                <div class="mb-3 mt-3">
+                    <label for="email">First Name:</label>
+                    <input type="text" class="form-control" id="FirstName" placeholder="Enter Your First Name" name="FirstName">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+                ';
+        }
+
+        ?>
       
     </div>
   </div>
